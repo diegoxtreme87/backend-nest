@@ -12,7 +12,18 @@ describe('DbManagerService', () => {
     service = module.get<DbManagerService>(DbManagerService);
   });
 
-  it('should be defined', () => {
+  it('el servicio debería estar definido', () => {
     expect(service).toBeDefined();
+  });
+
+  describe('getUser', () => {
+    it('deberia valer como prueba de funcionamiento de metodo getuser con valor josefa', () => {
+      const testId = 123;
+      const expectedUser = { id: testId, nombre: 'Josefa' };
+
+      const result = service.getUser(testId);
+      expect(result).toEqual(expectedUser);
+    });
+
   });
 });
